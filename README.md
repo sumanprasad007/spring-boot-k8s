@@ -114,4 +114,4 @@ For production deployment:
 
 ## License
 
-[MIT License](LICENSE)# spring-boot-k8s
+[MIT License](LICENSE)

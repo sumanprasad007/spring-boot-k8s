@@ -44,7 +44,7 @@ public class HomeController {
 
     @PostMapping("/contact")
     public String submitContactForm(@ModelAttribute ContactForm contactForm, RedirectAttributes redirectAttributes) {
-        contactService.saveContactForm(contactForm);
+        contactService.saveContactSubmission(contactForm);
         redirectAttributes.addFlashAttribute("successMessage", "Thank you for your message! We will get back to you shortly.");
         return "redirect:/";
     }
