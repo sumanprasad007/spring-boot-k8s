@@ -1,5 +1,5 @@
 # Landing Website with Java Spring Boot
-![alt text](image-1.png)
+![alt text](image-2.png)
 
 A simple landing website built with Java Spring Boot, featuring a responsive frontend using Bootstrap and Thymeleaf templating.
 
