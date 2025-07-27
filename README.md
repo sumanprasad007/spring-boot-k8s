@@ -1,5 +1,5 @@
 # Landing Website with Java Spring Boot
-![alt text](image.png)
+![alt text](image-1.png)
 
 A simple landing website built with Java Spring Boot, featuring a responsive frontend using Bootstrap and Thymeleaf templating.
 
@@ -112,6 +112,20 @@ For production deployment:
 - Update the CSS styles within the HTML files
 - Add new controller endpoints in `HomeController.java` for additional pages
 - Extend the model classes for more complex data handling
+
+## Live Website:
+
+### Home:
+![alt text](image-2.png)
+
+### About:
+![alt text](image-1.png)
+
+### Services:
+![alt text](image-3.png)
+
+### Contact:
+![alt text](image-4.png)
 
 ## License
 
