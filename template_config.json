@@ -1,0 +1,12 @@
+{
+  "description": "A professional Java project template using Maven build system. Features standard Maven directory layout, dependency management, and comprehensive build lifecycle configuration. Includes JUnit testing setup, resource handling, and proper package organization.",
+  "required_fields": [],
+  "required_files": [
+    "src/main/java/com/example/Main.java",
+    "pom.xml"
+  ],
+  "lang": "Java",
+  "framework": "Java",
+  "name": "java_template",
+  "scene": "default_java_project"
+} 
