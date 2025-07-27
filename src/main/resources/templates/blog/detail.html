@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${post.title} + ' - Our Company'">Blog Post - Our Company</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .navbar {
+            background: linear-gradient(90deg, #343a40 0%, #495057 100%);
+        }
+        .post-header {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+        .post-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+        .category-badge {
+            background: linear-gradient(90deg, #17a2b8 0%, #138496 100%);
+            color: white;
+            font-weight: normal;
+        }
+        .footer {
+            background: linear-gradient(90deg, #343a40 0%, #212529 100%);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        .post-meta {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .post-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Company Name</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <span class="badge category-badge mb-2" th:text="${post.category}">Category</span>
+            <h1 th:text="${post.title}">Blog Post Title</h1>
+            <div class="post-meta">
+                <span th:text="'By ' + ${post.author} + ' on ' + ${#temporals.format(post.createdAt, 'MMMM d, yyyy')}">By Author on Date</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="post-content">
+                    <img th:if="${post.imageUrl}" th:src="${post.imageUrl}" class="post-image" alt="Blog Post Image">
+                    <div th:utext="${post.content}">
+                        <!-- Post content will go here -->
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="/blog" class="btn btn-outline-primary">&larr; Back to Blog</a>
+                    <a th:href="@{/blog(category=${post.category})}" class="btn btn-outline-info">More in <span th:text="${post.category}">Category</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2023 Company Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
